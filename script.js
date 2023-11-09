@@ -63,6 +63,7 @@ let checkWin = () => {
           element.innerHTML = "";
         });
       }
+      turn='x';
     } 
   });
 };
