@@ -4,6 +4,7 @@ let enterbeep = new Audio("./beep-02.mp3");
 let success = new Audio("./tadaa-47995.mp3");
 let music = new Audio("./music.mp3");
 let rstm = new Audio("./beep-03.mp3");
+let drow = new Audio("./drow.mp3");
 
 let turn = "x";
 let win = "false";
@@ -20,6 +21,28 @@ const change_turn = () => {
 };
 
 //  write a function for check the wining condition
+let checkTie = () => {
+  let textbox = document.getElementsByClassName("boxitem");
+  for (let a = 0; a <= 8; a++) {
+    if (textbox[a].innerHTML === "") return;
+  }
+  //   console.log("Drow");
+  tie++;
+  let count = document.getElementsByClassName("con");
+  count[2].innerHTML = tie;
+
+  // updatate data
+  let dro = document.getElementById("win");
+  dro.style.display = "flex";
+  dro.innerHTML = "Match Drow";
+  dro.style.backgroundColor = "blue";
+  dro.style.color = "white";
+  drow.play();
+
+  // update the turn
+  turn = "x";
+  document.getElementById("turn_w").innerHTML = turn;
+};
 
 let checkWin = () => {
   let wins = [
@@ -62,9 +85,11 @@ let checkWin = () => {
         Array.from(textbox).forEach((element) => {
           element.innerHTML = "";
         });
+        win = false;
       }
+
       turn = "x";
-      document.getElementById('turn_w').innerHTML=turn;
+      document.getElementById("turn_w").innerHTML = turn;
     }
   });
 };
@@ -83,6 +108,7 @@ Array.from(Box).forEach((element) => {
       document.getElementById("turn_w").innerHTML = turn;
       enterbeep.play();
       checkWin();
+      checkTie();
     }
   });
 });
@@ -111,7 +137,7 @@ rst.addEventListener("click", () => {
   img[0].style.display = "none";
   win = false;
   turn = "x";
-  document.getElementById('turn_w').innerHTML=turn;
+  document.getElementById("turn_w").innerHTML = turn;
   rstm.play();
   xc = 0;
   oc = 0;
@@ -120,4 +146,6 @@ rst.addEventListener("click", () => {
   count[0].innerHTML = xc;
   count[1].innerHTML = oc;
   count[2].innerHTML = tie;
+
+  document.getElementById("win").style.display = "none";
 });
