@@ -63,8 +63,9 @@ let checkWin = () => {
           element.innerHTML = "";
         });
       }
-      turn='x';
-    } 
+      turn = "x";
+      document.getElementById('turn_w').innerHTML=turn;
+    }
   });
 };
 
@@ -110,6 +111,7 @@ rst.addEventListener("click", () => {
   img[0].style.display = "none";
   win = false;
   turn = "x";
+  document.getElementById('turn_w').innerHTML=turn;
   rstm.play();
   xc = 0;
   oc = 0;
