@@ -1,0 +1,162 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+nav{
+    background-color:rgb(100, 100, 166);
+    font-size: 45px;
+    position: sticky;
+}
+p{
+    display: none;
+}
+.container{
+
+    margin-top: 10px;
+    background-color:none;
+    display: grid;
+    grid-template-columns: repeat(3,10vw);
+    grid-template-rows: repeat(3,10vw);
+    justify-content: center;
+}
+.box{
+    border: 2px solid rgb(172, 96, 96);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8vw;
+    cursor: pointer;
+    
+
+}
+
+.music_btn:hover{
+    background-color: rgb(79, 123, 79);
+}
+.box:hover{
+    background-color: rgb(137, 134, 134);
+}
+.bt-0{
+    border-top: none;
+}
+.bb-0{
+    border-bottom: none;
+}
+.br-0{
+    border-right: none;
+}
+.bl-0{
+    border-left: none;
+}
+.music_btn{
+    background: rgb(25, 25, 188);
+    color: white;
+    border-radius: 10px;
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    height: 35px;
+    width: 50px;
+}
+footer ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+footer ul li{
+    list-style: none;
+    padding: 5px;
+    color: rgb(110, 106, 106);
+}
+footer ul li a{
+    text-decoration: none;
+    color: white;
+    
+}
+footer ul li a:hover{
+    background-color: rgb(76, 61, 53);
+    color: white;
+    border-radius: 8px;
+}
+footer{
+    background-color: rgb(20, 20, 25);
+    position: fixed;
+    width:100%;
+    bottom: 0px;
+}
+#rst{
+    background-color: rgb(42, 64, 210);
+    font-size: 25px;
+    border: solid red;;
+    border-radius: 8px ;
+    margin-left: 45vw;
+    color: whitesmoke;
+}
+#rst:hover{
+    background-color: rgb(9, 9, 232);
+    color: rgb(251, 250, 250);
+    cursor: pointer;
+}
+.imge{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+.imge{
+    display: none;
+}
+.count{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#win{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(152, 37, 56);
+}
+
+@media screen and (max-width: 530px) {
+    
+    .container{
+        display: grid;
+        grid-template-columns: repeat(3,20vw);
+        grid-template-rows: repeat(3,20vw);
+    }
+    #rst{
+        margin-top: 10px;
+        margin-left: 40vw;
+    }
+
+    }
+    
+@media screen and (max-width:230px){
+    nav{
+        display: none;
+    }
+    .container{
+        display: none;
+    }
+    #rst{
+        display: none;
+    }
+    #win{
+        display: none;
+    }
+    footer{
+        display: none;
+    }
+    .imge{
+        display: none;
+    }
+    .count{
+        display: none;
+    }
+    .music_btn{
+        display: none;
+    }
+    p{
+        display: block;
+        color: red;
+    }
+    
+}
