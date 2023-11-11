@@ -39,6 +39,10 @@ let checkTie = () => {
   dro.style.color = "white";
   drow.play();
 
+  Array.from(textbox).forEach((element) => {
+    element.innerHTML = "";
+  });
+
   // update the turn
   turn = "x";
   document.getElementById("turn_w").innerHTML = turn;
